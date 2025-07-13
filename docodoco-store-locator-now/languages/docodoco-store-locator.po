@@ -1,0 +1,147 @@
+# Translation of Plugins - DocoDoco Store Locator - Stable Readme (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - DocoDoco Store Locator - Stable Readme (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.0\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - DocoDoco Store Locator - Stable Readme (latest release)\n"
+
+#. Short description.
+#, gp-priority: high
+msgid "ウェブサイトに検索可能な店舗一覧と地図表示を簡単に追加することができるプラグインです。どこどこJPを用いてサイト訪問者に最寄りの店舗を表示することも可能です。"
+msgstr "ウェブサイトに検索可能な店舗一覧と地図表示を簡単に追加することができるプラグインです。どこどこJPを用いてサイト訪問者に最寄りの店舗を表示することも可能です。"
+
+#. Plugin name.
+#, gp-priority: high
+msgid "DocoDoco Store Locator"
+msgstr "DocoDoco Store Locator"
+
+#. Found in faq list item.
+msgid "詳しくは <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">Google Maps Platform のドキュメント</a> を参照ください。"
+msgstr "詳しくは <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">Google Maps Platform のドキュメント</a> を参照ください。"
+
+#. Found in faq list item.
+msgid "Googleアカウントを作成し、Google Cloud Platform のサイトでAPIの有効化を行う必要があります。"
+msgstr "Googleアカウントを作成し、Google Cloud Platform のサイトでAPIの有効化を行う必要があります。"
+
+#. Found in faq list item.
+msgid "どこどこJPのAPIキーを設定せずに利用することは可能ですが、位置情報に基づく表示制御が行われなくなります。"
+msgstr "どこどこJPのAPIキーを設定せずに利用することは可能ですが、位置情報に基づく表示制御が行われなくなります。"
+
+#. Found in faq list item.
+msgid "APIキーをお持ちでない場合は <a href=\"https://www.docodoco.jp/\">どこどこJP公式サイト</a> からAPIキーを発行できます。"
+msgstr "APIキーをお持ちでない場合は <a href=\"https://www.docodoco.jp/\">どこどこJP公式サイト</a> からAPIキーを発行できます。"
+
+#. Found in faq list item.
+msgid "サイト訪問者に最寄り店舗を表示する機能を使用するために、どこどこJPのAPIキーを設定します。"
+msgstr "サイト訪問者に最寄り店舗を表示する機能を使用するために、どこどこJPのAPIキーを設定します。"
+
+#. Found in faq header.
+msgid "Google Maps Platform APIキーの発行方法は？"
+msgstr "Google Maps Platform APIキーの発行方法は？"
+
+#. Found in faq header.
+msgid "どこどこJP APIキーの設定とは？"
+msgstr "どこどこJP APIキーの設定とは？"
+
+#. Found in installation list item.
+msgid "「表示設定」でテンプレートを選択します。"
+msgstr "「表示設定」でテンプレートを選択します。"
+
+#. Found in installation list item.
+msgid "「導入方法」に表示されるショートコードを公開用のページに入力します。"
+msgstr "「導入方法」に表示されるショートコードを公開用のページに入力します。"
+
+#. Found in installation list item.
+msgid "「店舗一覧」または「店舗登録」から店舗情報を登録します。"
+msgstr "「店舗一覧」または「店舗登録」から店舗情報を登録します。"
+
+#. Found in installation list item.
+msgid "「表示設定」で、Google Maps Platform APIキーを入力します。"
+msgstr "「表示設定」で、Google Maps Platform APIキーを入力します。"
+
+#. Found in installation list item.
+msgid "プラグインをインストールすると、管理画面に「店舗管理」メニューが追加されます。"
+msgstr "プラグインをインストールすると、管理画面に「店舗管理」メニューが追加されます。"
+
+#. Found in description list item.
+msgid "<a href=\"https://www.docodoco.jp/learning/docodoco-store-locator/\">プラグイン紹介ページ</a>"
+msgstr "<a href=\"https://www.docodoco.jp/learning/docodoco-store-locator/\">プラグイン紹介ページ</a>"
+
+#. Found in description list item.
+msgid "サービス提供者のプライバシーポリシーは「<a href=\"https://policies.google.com/\">ポリシーと規約 – Google</a>」以下を確認してください。"
+msgstr "サービス提供者のプライバシーポリシーは「<a href=\"https://policies.google.com/\">ポリシーと規約 – Google</a>」以下を確認してください。"
+
+#. Found in description list item.
+msgid "地図を表示するために Google Maps API を使用します。"
+msgstr "地図を表示するために Google Maps API を使用します。"
+
+#. Found in description list item.
+msgid "プライバシーポリシーは<a href=\"https://www.geolocation.co.jp/privacy/\">サービス提供者のWebサイト</a>を確認してください。"
+msgstr "プライバシーポリシーは<a href=\"https://www.geolocation.co.jp/privacy/\">サービス提供者のWebサイト</a>を確認してください。"
+
+#. Found in description list item.
+msgid "本プラグインを使用することにより、サイトの訪問者のIPアドレス等の情報が、どこどこJPのAPI（api.docodoco.jp）を通じてサービス提供者に送信されることがあります。"
+msgstr "本プラグインを使用することにより、サイトの訪問者のIPアドレス等の情報が、どこどこJPのAPI（api.docodoco.jp）を通じてサービス提供者に送信されることがあります。"
+
+#. Found in description list item.
+msgid "どこどこJPとは、IPアドレスとそれに紐づいた地域・組織・気象・回線情報など100種類以上の情報を利用できるAPIサービスです。"
+msgstr "どこどこJPとは、IPアドレスとそれに紐づいた地域・組織・気象・回線情報など100種類以上の情報を利用できるAPIサービスです。"
+
+#. Found in description list item.
+msgid "このプラグインでは、IPアドレスに基づきサイト訪問者の最寄り店舗を表示するために、<a href=\"https://www.docodoco.jp/\">どこどこJP</a> のAPIを使用します。"
+msgstr "このプラグインでは、IPアドレスに基づきサイト訪問者の最寄り店舗を表示するために、<a href=\"https://www.docodoco.jp/\">どこどこJP</a> のAPIを使用します。"
+
+#. Found in description list item.
+msgid "Japanese  – default"
+msgstr "Japanese  – default"
+
+#. Found in description list item.
+msgid "どこどこJPの設定を追加することで、IPアドレスと位置情報に基づいてサイト訪問者に最寄りの店舗を表示することが可能です。"
+msgstr "どこどこJPの設定を追加することで、IPアドレスと位置情報に基づいてサイト訪問者に最寄りの店舗を表示することが可能です。"
+
+#. Found in description list item.
+msgid "店舗情報の追加・編集は、管理画面からの入力またはCSVファイルを用いた一括登録に対応しています。"
+msgstr "店舗情報の追加・編集は、管理画面からの入力またはCSVファイルを用いた一括登録に対応しています。"
+
+#. Found in description list item.
+msgid "このプラグインを利用すると、Google マップを用いた店舗一覧ページの作成が簡単に設定できます。"
+msgstr "このプラグインを利用すると、Google マップを用いた店舗一覧ページの作成が簡単に設定できます。"
+
+#. Found in description header.
+msgid "Documentation"
+msgstr "資料"
+
+#. Found in description header.
+msgid "Google Maps API"
+msgstr "Google Maps API"
+
+#. Found in description header.
+msgid "どこどこJP"
+msgstr "どこどこJP"
+
+#. Found in description header.
+msgid "Language"
+msgstr "言語"
+
+#. Screenshot description.
+msgid "ZIPインポートの結果画面"
+msgstr "ZIPインポートの結果画面"
+
+#. Screenshot description.
+msgid "管理画面: 店舗管理 -&gt; 店舗一覧"
+msgstr "管理画面: 店舗管理 -&gt; 店舗一覧"
+
+#. Screenshot description.
+msgid "店舗一覧の表示サンプル"
+msgstr "店舗一覧の表示サンプル"
+
+#. Found in changelog list item.
+#, gp-priority: low
+msgid "最初のリリース"
+msgstr "最初のリリース"
