@@ -64,6 +64,9 @@ class StoreDetailTemplateHandler {
             $store = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}docosl_stores WHERE id = %d AND publish_status = %d", sanitize_text_field(wp_unslash($_GET['storeId'])), Store::PUBLISH_STATUS['PUBLISHED']));
         }
 
+        // カテゴリーを取得（追加）
+        $category = isset($store->category) ? $store->category : 'municipality';
+
         $is_map_display_enabled = (!empty($global_settings->google_maps_apikey) && $display_settings->map_display_enabled == 1);
 
         // 一覧ページのURLを取得

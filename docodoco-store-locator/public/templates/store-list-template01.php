@@ -3,7 +3,7 @@
 <article class="docodoco_store">
     <!--========== 一覧レイアウト01 ==========-->
     <div class="docodoco_store_index01">
-        <!--========== 検索条件 ==========-->
+        <!--========== 検索条件 ==========-->      
         <div class="docodoco_index_search01">
             <div class="index_search_box01">
                 <?php 
@@ -14,13 +14,15 @@
                     <?php 
                     $placeholder = (isset($atts['category']) && $atts['category'] === 'hospital') ? '例：○○クリニック、千代田区' : '例：新宿区、横浜市';
                     ?>
-                    <input type="text" name="keyword" value="" class="index_search_keyword01" placeholder="<?php echo esc_attr($placeholder); ?>">
-                    <button type="submit" class="index_search_btn01">
+                    <?php $unique_id = uniqid('docosl_'); ?>
+                    <input type="text" name="keyword" value="" class="index_search_keyword01" data-unique-id="<?php echo esc_attr($unique_id); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
+                    <button type="submit" class="index_search_btn01" data-unique-id="<?php echo esc_attr($unique_id); ?>">
                         <span class="material-symbols-sharp">search</span>
                     </button>
                 </div>
             </div>
         </div>
+
         <!--========== /検索条件 ==========-->
 
         <!--========== Map ==========-->
@@ -55,7 +57,7 @@
             <table style="display: none;">
                 <tbody id="temp_docodoco_store_list">
                     <?php foreach ($stores as $store) : ?>
-                        <tr class="js_docodoco_store_row" data-distance="999999" data-lat="<?php echo esc_attr($store->lat); ?>" data-lng="<?php echo esc_attr($store->lng); ?>" >
+                        <tr class="js_docodoco_store_row" data-distance="999999" data-lat="<?php echo esc_attr($store->lat); ?>" data-lng="<?php echo esc_attr($store->lng); ?>"data-category="<?php echo esc_attr($store->category); ?>" >
                             <td class="docodoco_store_name">
                                 <?php
                                     if ($store_detail_page_enabled) {
@@ -203,6 +205,9 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         ];
+
+        // 現在のカテゴリー
+        const CURRENT_CATEGORY = '<?php echo esc_js($atts['category']); ?>';
     
         // Google Maps APIで使用する定数
         const MAX_ZOOM_LEVEL = 10; // 最大ズームレベル
@@ -403,14 +408,20 @@
                         storeName: '<?php echo esc_html($store->name); ?>',
                         storePostalCode: '<?php echo esc_html($store->postal_code); ?>',
                         storeAddress: '<?php echo esc_html($store->address); ?>',
+                        storeCategory: '<?php echo esc_html($store->category); ?>',
                     },
                 <?php endforeach; ?>
             ];
+// カテゴリーでフィルタリング
+if (CURRENT_CATEGORY) {
+    markers = markers.filter(markerData => markerData.storeCategory === CURRENT_CATEGORY);
+}
+
         }
     
         /*
           検索ボタンクリック時の処理
-        */ 
+        */
         document.querySelector('.index_search_btn01').addEventListener('click', () => {
             const keyword = document.querySelector('.index_search_keyword01').value;
             searchStores(keyword);
@@ -418,13 +429,15 @@
 
         /*
           キーワード入力エリアでEnterキーが押された時の処理
-        */ 
+        */
         document.querySelector('.index_search_keyword01').addEventListener('keydown', (event) => {
             if (event.keyCode === 13) {
                 const keyword = document.querySelector('.index_search_keyword01').value;
                 searchStores(keyword);
             }
         });
+
+
     
         /*
           キーワード検索
@@ -477,6 +490,11 @@
     
             // 店舗リストの追加
             tempStoreListElement.forEach(trElement => {
+    // カテゴリーが指定されている場合、一致しないものはスキップ
+    if (CURRENT_CATEGORY && trElement.getAttribute('data-category') !== CURRENT_CATEGORY) {
+        return;
+    }
+
                 const cloneTrElement = trElement.cloneNode(true);
                 if (mode === DISPLAY_MODE.SEARCH) {                   
                     // 店舗名に検索キーワードが含まれるかチェック

@@ -1,4 +1,14 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
+<?php 
+// カテゴリー別の表示項目を定義
+$category_items = [
+    'hospital' => ['address', 'tel', 'url', 'document', 'medical_service', 'female_doctor', 'open_hours', 'sunday_hours', 'application', 'online_booking', 'remarks', 'email'],
+    'municipality' => ['address', 'tel', 'url', 'email', 'department', 'age', 'period', 'document', 'application', 'belongings', 'cost']
+];
+$allowed_items = isset($category_items[$category]) ? $category_items[$category] : $category_items['municipality'];
+?>
+
 <!--========== テンプレート ==========-->
 <article class="docodoco_store">
     <!--========== 詳細レイアウト01 ==========-->
@@ -8,7 +18,7 @@
         <div class="docodoco_store_detail_info01">
             <dl class="docodoco_detail_shop_info01">
                 <?php foreach ($display_items as $item) : ?>
-                    <?php if ($item->is_display == 1) : ?>
+                    <?php if ($item->is_display == 1 && in_array($item->item_name, $allowed_items)) : ?>
                         <?php
                             // $item->item_name に基づいて $storeの対応する項目を取得
                             $item_value = '';
@@ -74,6 +84,19 @@
                                 case 'cost':
                                     $item_value = $store->cost;
                                     break;
+                                    // 病院情報項目
+                                case 'medical_service':
+                                    $item_value = $store->medical_service;
+                                    break;
+                                case 'female_doctor':
+                                    $item_value = $store->female_doctor;
+                                    break;
+                                case 'sunday_hours':
+                                    $item_value = $store->sunday_hours;
+                                    break;
+                                case 'online_booking':
+                                    $item_value = $store->online_booking;
+                                    break;
                             }
                         ?>
                         <dt><?php echo esc_html($item_labels[$item->item_name]); ?></dt>
@@ -99,7 +122,7 @@
         <?php endif; ?>
         <!--========== /Map ==========-->
 
-        <p class="docodoco_store_btn01 docodoco_store_btn01_back"><a href="<?php echo esc_url($list_page_url) ?>">一覧へ戻る</a></p>
+        <!-- <p class="docodoco_store_btn01 docodoco_store_btn01_back"><a href="<?php echo esc_url($list_page_url) ?>">一覧へ戻る</a></p> -->
     </div>
 <!--========== /詳細レイアウト01 ==========-->
 </article>
